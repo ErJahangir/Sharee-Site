@@ -5,7 +5,7 @@ import { FaAngleRight } from "react-icons/fa";
 
 const PageHeadingimg = ({ title }) => {
   return (
-    <div className="relative mb-16">
+    <div className="relative mb-16 mt-10 md:mt-0 ">
       <Image
         src="/images/banner-for-all2.jpg"
         width={1000}

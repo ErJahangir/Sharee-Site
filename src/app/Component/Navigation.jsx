@@ -193,7 +193,7 @@ const Navigation = () => {
       role="navigation"
       aria-label="Main Navigation"
       className={`fixed w-full top-0 left-0 z-50 transition-all duration-300 ${
-        scrolling ? "bg-white shadow-md" : "bg-transparent"
+        scrolling ? "bg-white shadow-md" : " bg-white md:bg-transparent"
       }`}
     >
       {/* Mobile view */}
@@ -217,14 +217,15 @@ const Navigation = () => {
             <Link href="/">Home</Link>
           </li>
           <li onClick={() => setShow(false)}>
-            <Link href="/productscreen">Shop</Link>
-          </li>
-          <li onClick={() => setShow(false)}>
-            <Link href="/Blogs">Blogs</Link>
-          </li>
-          <li onClick={() => setShow(false)}>
             <Link href="/about">About</Link>
           </li>
+          <li onClick={() => setShow(false)}>
+            <Link href="/productscreen">Products</Link>
+          </li>
+          <li onClick={() => setShow(false)}>
+            <Link href="/">Category</Link>
+          </li>
+
           <li onClick={() => setShow(false)}>
             <Link href="/contact">Contact</Link>
           </li>
@@ -244,26 +245,26 @@ const Navigation = () => {
           <Link href="/">
             <Image src="/images/logo.png" width={100} height={100} alt="Logo" />
           </Link>
-          <ul className="hidden md:flex flex-row items-center gap-3">
+          <ul className="hidden md:flex flex-row items-center gap-8 text-[18px]">
             <li>
               <Link href="/">Home</Link>
-            </li>
-            <li className="group">
-              <Link href="/productscreen" className="cursor-pointer">
-                Shop
-              </Link>
-            </li>
-            <li className="group">
-              <h2 className="cursor-pointer">Elements</h2>
-            </li>
-            <li className="group">
-              <Link href="/Blogs" className="cursor-pointer">
-                Blogs
-              </Link>
             </li>
             <li>
               <Link href="/about">About</Link>
             </li>
+
+            <li className="group">
+              <Link href="/productscreen" className="cursor-pointer">
+                Products
+              </Link>
+            </li>
+
+            <li className="group">
+              <Link href="/" className="cursor-pointer">
+                Category
+              </Link>
+            </li>
+
             <li>
               <Link href="/">Contact</Link>
             </li>
