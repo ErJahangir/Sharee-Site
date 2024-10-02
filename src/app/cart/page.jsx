@@ -1,137 +1,104 @@
 // "use client";
 // import Image from "next/image";
-// import React, { useState } from "react";
-// import { FaPlus } from "react-icons/fa";
-// import { IoMdRemove, IoMdRemoveCircle } from "react-icons/io";
+// import React from "react";
+// import { FaCaretDown, FaCaretUp } from "react-icons/fa";
+// import { IoMdRemoveCircle } from "react-icons/io";
 // import NewArrival from "../Component/Home/NewArrival";
 // import PageHeadingimg from "../Component/PageHeadingimg";
-
-// const initialData = [
-//   {
-//     image: "/images/apro134-1-600x778.jpg",
-//     Product: "T-shirt with skirt – Pink",
-//     Price: 150.0,
-//     Quantity: 1,
-//     Total: 150.0,
-//   },
-//   {
-//     image: "/images/apro201-1-600x778.jpg",
-//     Product: "Mini Dress",
-//     Price: 139.0,
-//     Quantity: 2,
-//     Total: 278.0,
-//   },
-// ];
+// import { useSelector, useDispatch } from "react-redux";
+// import {
+//   increaseQuantity,
+//   decreaseQuantity,
+//   removeProduct,
+// } from "../Redux/Slice";
 
 // const Page = () => {
-//   const [cartData, setCartData] = useState(initialData);
+//   const dispatch = useDispatch();
+//   const cartData = useSelector((state) => state.product.products);
 
-//   const handleIncreaseQuantity = (index) => {
-//     const updatedData = cartData.map((item, i) => {
-//       if (i === index) {
-//         const newQuantity = item.Quantity + 1;
-//         return {
-//           ...item,
-//           Quantity: newQuantity,
-//           Total: newQuantity * item.Price,
-//         };
-//       }
-//       return item;
-//     });
-//     setCartData(updatedData);
+//   const handleIncreaseQuantity = (id) => {
+//     dispatch(increaseQuantity(id));
 //   };
 
-//   const handleDecreaseQuantity = (index) => {
-//     const updatedData = cartData.map((item, i) => {
-//       if (i === index && item.Quantity > 1) {
-//         const newQuantity = item.Quantity - 1;
-//         return {
-//           ...item,
-//           Quantity: newQuantity,
-//           Total: newQuantity * item.Price,
-//         };
-//       }
-//       return item;
-//     });
-//     setCartData(updatedData);
+//   const handleDecreaseQuantity = (id) => {
+//     dispatch(decreaseQuantity(id));
 //   };
 
-//   const handleRemoveItem = (index) => {
-//     const updatedData = cartData.filter((_, i) => i !== index);
-//     setCartData(updatedData);
+//   const handleRemoveItem = (id) => {
+//     dispatch(removeProduct(id));
 //   };
 
 //   return (
 //     <div>
 //       <PageHeadingimg title={"Cart"} />
 
-//       <div className="relative overflow-x-auto">
-//         <table className="w-[95%] mx-auto md:w-[85%] text-sm text-left text-gray-500">
-//           <thead className="text-xs text-white uppercase bg-gray-700">
-//             <tr>
-//               <th scope="col" className="px-6 py-3"></th>
-//               <th scope="col" className="px-6 py-3"></th>
-//               <th scope="col" className="px-6 py-3">
-//                 Product
-//               </th>
-//               <th scope="col" className="px-6 py-3">
-//                 Price
-//               </th>
-//               <th scope="col" className="px-6 py-3">
-//                 Quantity
-//               </th>
-//               <th scope="col" className="px-6 py-3">
-//                 Total
-//               </th>
-//             </tr>
-//           </thead>
-//           <tbody>
-//             {cartData.map((item, index) => (
-//               <tr key={index} className="bg-white border-b">
-//                 <td className="px-6 py-4 border-l">
-//                   <IoMdRemoveCircle
-//                     className="text-2xl cursor-pointer hover:text-red-500"
-//                     onClick={() => handleRemoveItem(index)}
-//                   />
-//                 </td>
-//                 <td className="px-6 py-4 flex flex-row items-center gap-6 border-l border-r justify-center">
-//                   <Image
-//                     src={item.image}
-//                     width={100}
-//                     height={100}
-//                     alt={item.Product}
-//                     className="md:w-[100px] md:h-[100px]"
-//                   />
-//                 </td>
-//                 <td className="px-6 py-4 font-medium text-gray-900 border-r">
-//                   {item.Product}
-//                 </td>
-//                 <td className="px-6 py-4 border-r">${item.Price.toFixed(2)}</td>
-//                 <td className="px-3 flex flex-row border-r items-center justify-center gap-2">
-//                   <button
-//                     onClick={() => handleDecreaseQuantity(index)}
-//                     className="bg-red-300 p-1 rounded-full hover:bg-red-400"
-//                   >
-//                     <IoMdRemove className="text-2xl" />
-//                   </button>
-//                   <span className="text-[22px] md:w-10 md:h-10 w-6 h-6 flex items-center justify-center border rounded-full border-black">
-//                     {item.Quantity}
+//       <div className="relative overflow-x-auto w-[95%] md:w-[65%] mx-auto">
+//         {cartData.length > 0 ? (
+//           cartData.map((item) => (
+//             <div
+//               key={item.id}
+//               className="flex flex-col md:flex-row justify-between p-4 border-b gap-5"
+//             >
+//               <Image
+//                 src={item.img || "/default-image.jpg"}
+//                 width={1000}
+//                 height={1000}
+//                 quality={100}
+//                 loading={"lazy"}
+//                 alt={item.title}
+//                 className=" w-[300px] h-auto md:w-[150px] md:h-[200px]  mx-4"
+//               />
+//               <div className="flex flex-row justify-between ">
+//                 <div className="flex w-[50%] md:w-[40%] flex-col gap-2">
+//                   <span className="font-medium text-gray-900">
+//                     {item.title}
 //                   </span>
-//                   <button
-//                     onClick={() => handleIncreaseQuantity(index)}
-//                     className="bg-green-300 p-1 rounded-full hover:bg-green-400"
-//                   >
-//                     <FaPlus className="text-[15px]" />
+//                   <span className="text-[15px] text-[#868686]">
+//                     Category:-
+//                     <span className="text-black"> {item.category}</span>
+//                   </span>
+//                   <span className="hidden md:flex">
+//                     <span className="text-[#868686]">Description:-</span>
+//                     <span className="text-[14px]">{item.description}</span>
+//                   </span>
+//                 </div>
+//                 <div className="flex w-[50%] md:w-[40%] items-center flex-col   gap-2">
+//                   <div className="text-lg">Rs.{item.price}</div>
+//                   <div className="flex items-center">
+//                     <button
+//                       onClick={() => handleDecreaseQuantity(item.id)}
+//                       disabled={item.Quantity === 1}
+//                       className={`bg-red-300 p-1 rounded-full hover:bg-red-400 ${
+//                         item.Quantity === 1
+//                           ? "opacity-50 cursor-not-allowed"
+//                           : ""
+//                       }`}
+//                     >
+//                       <FaCaretDown className="text-[15px]" />
+//                     </button>
+//                     <span className="w-6 h-6 flex items-center justify-center text-[15px] mx-2">
+//                       {item.Quantity}
+//                     </span>
+//                     <button
+//                       onClick={() => handleIncreaseQuantity(item.id)}
+//                       className="bg-green-300 p-1 rounded-full hover:bg-green-400"
+//                     >
+//                       <FaCaretUp className="text-[15px]" />
+//                     </button>
+//                   </div>
+//                   <button className="border bg-[#fa8f74] my-5 py-1 px-3 rounded-md">
+//                     Remove
 //                   </button>
-//                 </td>
-//                 <td className="px-6 py-4 border-r">${item.Total.toFixed(2)}</td>
-//               </tr>
-//             ))}
-//           </tbody>
-//         </table>
+//                 </div>
+//               </div>
+//             </div>
+//           ))
+//         ) : (
+//           <div className="flex items-center justify-center">
+//             No items in the cart
+//           </div>
+//         )}
 //       </div>
-
-//       <NewArrival />
 //     </div>
 //   );
 // };
@@ -143,7 +110,6 @@ import Image from "next/image";
 import React from "react";
 import { FaCaretDown, FaCaretUp } from "react-icons/fa";
 import { IoMdRemoveCircle } from "react-icons/io";
-import NewArrival from "../Component/Home/NewArrival";
 import PageHeadingimg from "../Component/PageHeadingimg";
 import { useSelector, useDispatch } from "react-redux";
 import {
@@ -151,6 +117,7 @@ import {
   decreaseQuantity,
   removeProduct,
 } from "../Redux/Slice";
+import Link from "next/link";
 
 const Page = () => {
   const dispatch = useDispatch();
@@ -172,83 +139,76 @@ const Page = () => {
     <div>
       <PageHeadingimg title={"Cart"} />
 
-      <div className="relative overflow-x-auto">
+      <div className="relative overflow-x-auto w-[95%] md:w-[65%] mx-auto">
         {cartData.length > 0 ? (
-          <table className="w-[95%] mx-auto md:w-[85%] text-sm text-left text-gray-500">
-            <thead className="text-xs text-white uppercase bg-gray-700">
-              <tr>
-                <th scope="col" className="px-6 py-3"></th>
-                <th scope="col" className="px-6 py-3"></th>
-                <th scope="col" className="px-6 py-3">
-                  Product
-                </th>
-                <th scope="col" className="px-6 py-3">
-                  Price & Quantity
-                </th>
-                <th scope="col" className="px-6 py-3">
-                  Total
-                </th>
-              </tr>
-            </thead>
-            <tbody>
-              {cartData.map((item, index) => (
-                <tr key={index} className="bg-white border-b">
-                  <td className="px-6 py-4 border-l">
-                    <IoMdRemoveCircle
-                      className="text-2xl cursor-pointer hover:text-red-500"
-                      onClick={() => handleRemoveItem(item.id)}
-                    />
-                  </td>
-                  <td className="px-6 py-4 flex flex-row items-center gap-6 border-l border-r justify-center">
-                    <Image
-                      src={item.img || "/default-image.jpg"} // Fallback image if none is provided
-                      width={100}
-                      height={100}
-                      alt={item.title}
-                      className="md:w-[100px] md:h-[100px]"
-                    />
-                  </td>
-                  <td className="px-6 py-4 font-medium text-gray-900 border-r">
+          cartData.map((item) => (
+            <div
+              key={item.id}
+              className="flex flex-col md:flex-row justify-between p-4 border-b gap-5 mx-auto"
+            >
+              <Link href={`/productscreen/${item.id}`} className="mx-auto">
+                <Image
+                  src={item.img || "/default-image.jpg"}
+                  width={1000}
+                  height={1000}
+                  quality={100}
+                  loading={"lazy"}
+                  alt={item.title}
+                  className="w-[300px] h-auto md:w-[150px] md:h-[200px] mx-4"
+                />
+              </Link>
+              <div className="flex justify-between w-full flex-row mx-auto ">
+                <div className="flex flex-col gap-2 w-full md:w-[50%] px-4 mx-auto">
+                  <span className="font-medium text-gray-900">
                     {item.title}
-                  </td>
-                  <td className="px-6 py-4 border-r flex flex-col items-center justify-center gap-2">
-                    <div className="text-lg font-semibold">${item.price}</div>
-                    <div className="flex flex-row items-center justify-center gap-2">
-                      <button
-                        onClick={() => handleDecreaseQuantity(item.id)}
-                        disabled={item.Quantity === 1}
-                        className={`bg-red-300 p-1 rounded-full hover:bg-red-400 ${
-                          item.Quantity === 1
-                            ? "opacity-50 cursor-not-allowed"
-                            : ""
-                        }`}
-                      >
-                        <FaCaretDown className="text-[15px]" />
-                      </button>
-                      <span className="w-6 h-6 flex items-center justify-center text-[15px]">
-                        {item.Quantity}
-                      </span>
-                      <button
-                        onClick={() => handleIncreaseQuantity(item.id)}
-                        className="bg-green-300 p-1 rounded-full hover:bg-green-400"
-                      >
-                        <FaCaretUp className="text-[15px]" />
-                      </button>
-                    </div>
-                  </td>
-                  <td className="px-6 py-4 border-r">${item.totalPrice}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
+                  </span>
+
+                  <span className="text-[#868686]">{item.category}</span>
+
+                  <span className="text-[15px] line-clamp-3 overflow-hidden text-[#868686]">
+                    {item.description}
+                  </span>
+                </div>
+                <div className="flex flex-col items-center md:items-start w-full md:w-[40%] gap-2 mx-auto ">
+                  <div className="text-[25px] font-bold">Rs. {item.price}</div>
+                  <div className="flex items-center">
+                    <button
+                      onClick={() => handleDecreaseQuantity(item.id)}
+                      disabled={item.Quantity === 1}
+                      className={`bg-red-300 p-1 rounded-full hover:bg-red-400 ${
+                        item.Quantity === 1
+                          ? "opacity-50 cursor-not-allowed"
+                          : ""
+                      }`}
+                    >
+                      <FaCaretDown className="text-[15px]" />
+                    </button>
+                    <span className="w-6 h-6 flex items-center justify-center text-[15px] mx-2">
+                      {item.Quantity}
+                    </span>
+                    <button
+                      onClick={() => handleIncreaseQuantity(item.id)}
+                      className="bg-green-300 p-1 rounded-full hover:bg-green-400"
+                    >
+                      <FaCaretUp className="text-[15px]" />
+                    </button>
+                  </div>
+                  <button
+                    onClick={() => handleRemoveItem(item.id)}
+                    className="border bg-[#fa8f74] my-2 py-1 px-3 rounded-md"
+                  >
+                    Remove
+                  </button>
+                </div>
+              </div>
+            </div>
+          ))
         ) : (
           <div className="flex items-center justify-center">
             No items in the cart
           </div>
         )}
       </div>
-
-      <NewArrival />
     </div>
   );
 };

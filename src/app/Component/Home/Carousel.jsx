@@ -92,7 +92,7 @@ const Carousel = () => {
     <div>
       <Slider {...settings}>
         {sliderData.map((item, index) => (
-          <div key={index} className="relative">
+          <div key={index} className="relative mt-16 md:mt-0">
             <Image
               src={item.img}
               width={1000}

@@ -7,8 +7,7 @@ import NewArrival from "./Component/Home/NewArrival";
 
 import Link from "next/link";
 import Footercarousel from "./Component/Home/Footercarousel";
-// import { useDispatch, useSelector } from "react-redux";
-// import { decrement, increment } from "./Redux/Slice";
+import BestSeller from "./Component/Home/BestSeller";
 
 const page = () => {
   const data = [
@@ -28,9 +27,6 @@ const page = () => {
       second: "SALE CLOTHES",
     },
   ];
-
-  // const count = useSelector((state) => state.counter.value);
-  // const dispatch = useDispatch();
 
   return (
     <div>
@@ -65,25 +61,35 @@ const page = () => {
         ))}
       </div>
 
-      {/* <div className="flex justify-center items-center gap-4 my-4">
-        <button
-          aria-label="Increment value"
-          onClick={() => dispatch(increment())}
-          className="px-4 py-2 bg-blue-500 text-white rounded"
-        >
-          Increment
-        </button>
-        <span className="text-lg">{count}</span>
-        <button
-          aria-label="Decrement value"
-          onClick={() => dispatch(decrement())}
-          className="px-4 py-2 bg-red-500 text-white rounded"
-        >
-          Decrement
-        </button>
-      </div> */}
-
       <NewArrival />
+      <div className="relative">
+        <Image
+          src="/images/banner101.jpg"
+          width={1000}
+          height={1000}
+          className="w-full h-auto object-cover"
+          alt="Modern Glasses Banner"
+        />
+        <div className="absolute top-10 md:top-1/3 left-5 md:left-32 z-10">
+          <div className="flex flex-row gap-4 items-center">
+            <div className="h-16 border-l-2 border-[#fa8f47]"></div>
+            <div className="flex flex-col text-[#fa8f47] gap-2">
+              <h2 className="uppercase tracking-[5px] font-bold">
+                Modern Glasses
+              </h2>
+              <p className="text-4xl md:text-5xl font-bold">Best Seller</p>
+            </div>
+          </div>
+          <p className="mt-2 text-[15px] text-[#868886]">
+            Lorem ipsum dolor sit amet consectetur adipiscing elit justo
+          </p>
+          <button className="mt-4 bg-black text-white py-2 px-4 rounded-full hover:bg-[#e88d4d] transition duration-300">
+            Shop Now
+          </button>
+        </div>
+      </div>
+
+      <BestSeller />
       <Footercarousel />
     </div>
   );

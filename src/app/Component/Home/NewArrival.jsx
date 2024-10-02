@@ -1,31 +1,35 @@
 "use client";
 import Image from "next/image";
-import React from "react";
+import React, { useState } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { FaRegHeart } from "react-icons/fa";
-import { MdOutlineShoppingBag } from "react-icons/md";
-import { GoArrowSwitch } from "react-icons/go";
-import { IoMdSearch } from "react-icons/io";
+import { FaRegHeart, FaRupeeSign } from "react-icons/fa";
+import { MdOutlineShoppingBag, MdRemoveRedEye } from "react-icons/md";
 import Link from "next/link";
-import { CiStar } from "react-icons/ci";
 import { NewArrivalData } from "../AllData";
+import { QuickView } from "../Modal";
+import { IoLogoWhatsapp } from "react-icons/io";
+
 const NewArrival = () => {
+  const [show, setShow] = useState(false);
+  const [data, setData] = useState(null);
+
   const settings = {
-    dots: true,
+    dots: false,
     infinite: true,
     speed: 500,
     slidesToShow: 4,
     slidesToScroll: 1,
     initialSlide: 0,
     autoplay: true,
+    arrows: false,
     autoplaySpeed: 3000,
     responsive: [
       {
         breakpoint: 1024,
         settings: {
-          slidesToShow: 3,
+          slidesToShow: 4,
         },
       },
       {
@@ -43,104 +47,74 @@ const NewArrival = () => {
     ],
   };
 
+  const handleQuick = async (item) => {
+    console.log(item);
+    try {
+      await setData(item);
+      console.log("====>", data);
+    } catch (error) {
+      alert("some error");
+    }
+    setShow(true);
+  };
   return (
-    <div className="w-[92%] md:w-[85%] flex mx-auto flex-col my-10 ">
-      <div className="flex flex-row justify-between w-full items-end mb-5">
-        <div>
-          <h2 className=" border border-black px-3 py-2 my-5 uppercase  w-[150px] font-extralight relative overflow-hidden group rounded-md">
-            <span className="relative z-10 font-bold">Top Trend</span>
-            <span className="absolute inset-0 ease-out transform bg-[#fa8f47] transition-all duration-700 -translate-x-full group-hover:translate-x-0 "></span>
-          </h2>
-
-          <p className=" text-[#7a7878] md:text-[17px] text-[14px] text-center">
-            Browse our website for the hottest items in the marketplace now.
-          </p>
-        </div>
+    <div className="w-[92%] md:w-[85%] flex mx-auto flex-col my-10">
+      <div className="flex flex-row justify-between w-full items-end">
+        <h2 className="uppercase font-extralight my-5 underline underline-offset-4 text-[20px]">
+          Top trend
+        </h2>
         <Link
           href="/productscreen"
-          className=" w-[150px] h-[40px] flex items-center justify-center  border border-black px-3 py-2 uppercase  font-extralight relative overflow-hidden group rounded-md"
+          className="uppercase font-extralight my-5 underline underline-offset-4 text-[20px] hover:text-[#fa8f4f] duration-700"
         >
-          <span className="relative z-10 font-bold">View all</span>
-          <span className="absolute inset-0 ease-out transform bg-[#fa8f47] transition-all duration-700 -translate-x-full group-hover:translate-x-0 "></span>
+          View all
         </Link>
       </div>
-      <div className="">
+      <div>
         <Slider {...settings}>
           {NewArrivalData.slice(0, 10).map((item, index) => (
-            <div key={index} className="relative group shadow-md rounded-md ">
+            <div key={index} className="relative group p-2">
               <Image
                 src={item.img}
                 width={1000}
                 height={1000}
-                className="w-[95%] h-[400px]  object-cover rounded-md mx-auto  "
+                className="w-full h-[350px]  object-cover mx-auto"
+                alt={item.title}
               />
+              <div className="absolute flex flex-row left-[25%] top-[80%] opacity-0 group-hover:opacity-100 group-hover:top-[60%] duration-300 text-[20px] items-center gap-2">
+                <button className="bg-[#fa8f47] w-10 h-10 text-white rounded-full flex items-center justify-center">
+                  <IoLogoWhatsapp />
+                </button>
 
-              <div className="absolute flex flex-row left-[25%] top-[80%] opacity-0 group-hover:opacity-100 group-hover:top-[60%]  duration-300 text-[20px] items-center gap-2">
-                <span>
-                  <Link
-                    href="/"
-                    className="bg-[#fa8f47] w-10 h-10 text-white rounded-full flex items-center justify-center"
-                  >
-                    <FaRegHeart />
-                  </Link>
-                </span>
-                <span>
-                  <Link
-                    href="/"
-                    className="bg-[#fa8f47] w-10 h-10 text-white rounded-full flex items-center justify-center"
-                  >
-                    <GoArrowSwitch />
-                  </Link>
-                </span>
-                <span>
-                  <Link
-                    href="/"
-                    className="bg-[#fa8f47] w-10 h-10 text-white text-[25px] rounded-full flex items-center justify-center"
-                  >
-                    <IoMdSearch />
-                  </Link>
-                </span>
-                <span>
-                  <Link
-                    href="/"
-                    className="bg-[#fa8f47] w-10 h-10 text-white text-[25px]  rounded-full flex items-center justify-center"
-                  >
-                    <MdOutlineShoppingBag />
-                  </Link>
-                </span>
+                <button
+                  className="bg-[#fa8f47] w-10 h-10 text-white rounded-full flex items-center justify-center"
+                  onClick={() => handleQuick(item)}
+                >
+                  <MdRemoveRedEye />
+                </button>
+
+                <button className="bg-[#fa8f47] w-10 h-10 text-white text-[25px] rounded-full flex items-center justify-center">
+                  <MdOutlineShoppingBag />
+                </button>
               </div>
-              <div className="p-2 flex flex-col gap-1">
-                <h2>{item.title}</h2>
-                <div className="flex flex-row">
-                  <CiStar />
-                  <CiStar />
-                  <CiStar />
-                  <CiStar />
-                  <CiStar />
-                </div>
-                <div>
-                  {item.price && (
-                    <h2 className="font-sans text-[#fa8f47]">{item.price}</h2>
-                  )}
-                  {item.oldPrice && item.newPrice && (
-                    <h2 className="font-sans">
-                      <span className="line-through text-[#868686]">
-                        {item.oldPrice}
-                      </span>{" "}
-                      - <span className="text-[#fa8f47]">{item.newPrice}</span>
-                    </h2>
-                  )}
-                  {item.low && item.high && (
-                    <h2 className="font-sans text-[#fa8f47]">
-                      <span>{item.low}</span> - <span>{item.high}</span>
-                    </h2>
-                  )}
-                </div>
+              <div className="p-2 pl-5 flex flex-col gap-1 items-center">
+                <h2 className="hover:text-[#fa8f47]">{item.title}</h2>
+                <p className="text-[15px] text-[#868686]">{item.category}</p>
+
+                {item.price && (
+                  <h2 className="font-sans text-[#fa8f47] flex flex-row items-center">
+                    <span>
+                      <FaRupeeSign />
+                    </span>
+                    <span className="text-[22px] font-bold">{item.price}</span>
+                  </h2>
+                )}
               </div>
             </div>
           ))}
         </Slider>
       </div>
+      <QuickView isOpen={show} onClose={() => setShow(false)} data={data} />
     </div>
   );
 };
