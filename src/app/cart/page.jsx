@@ -104,12 +104,10 @@
 // };
 
 // export default Page;
-
 "use client";
 import Image from "next/image";
 import React from "react";
 import { FaCaretDown, FaCaretUp } from "react-icons/fa";
-import { IoMdRemoveCircle } from "react-icons/io";
 import PageHeadingimg from "../Component/PageHeadingimg";
 import { useSelector, useDispatch } from "react-redux";
 import {
@@ -135,11 +133,18 @@ const Page = () => {
     dispatch(removeProduct(id));
   };
 
+  // Calculate total price
+  const totalPrice = cartData.reduce(
+    (acc, item) => acc + item.price * item.Quantity,
+    0
+  );
+
   return (
     <div>
       <PageHeadingimg title={"Cart"} />
 
-      <div className="relative overflow-x-auto w-[95%] md:w-[65%] mx-auto">
+      <div className="relative overflow-y-auto w-[95%] md:w-[65%] mx-auto h-[70vh]">
+        {/* Make the cart scrollable */}
         {cartData.length > 0 ? (
           cartData.map((item) => (
             <div
@@ -209,6 +214,22 @@ const Page = () => {
           </div>
         )}
       </div>
+
+      {/* Fixed Total Price outside of the .map() loop */}
+      {cartData.length > 0 && (
+        <div className="fixed bottom-0 left-0 w-full bg-white border-t py-4 shadow-md flex  flex-col">
+          <div className="flex flex-row justify-between">
+            <span className="text-2xl font-bold">Total Price: Rs.</span>
+            <span className="text-2xl font-bold">{totalPrice}</span>
+          </div>
+          <Link
+            href="/ordered"
+            className="bg-[#fa8f47] w-[150px] rounded-full h-[40px] flex justify-center items-center font-bold text-white uppercase"
+          >
+            Checkout
+          </Link>
+        </div>
+      )}
     </div>
   );
 };

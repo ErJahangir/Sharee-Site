@@ -15,12 +15,15 @@ const Page = () => {
   return (
     <div>
       <PageHeadingimg title={"Products"} />
-      <ProductGrid data={NewArrivalData} currentPage={currentPage} />
-      <Pagination
+      <ProductGrid
+        data={NewArrivalData}
+        // currentPage={currentPage}
+      />
+      {/* <Pagination
         currentPage={currentPage}
         totalItems={NewArrivalData.length}
         onPageChange={handlePageChange}
-      />
+      /> */}
     </div>
   );
 };

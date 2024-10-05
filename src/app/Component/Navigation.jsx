@@ -222,8 +222,19 @@ const Navigation = () => {
           <li onClick={() => setShow(false)}>
             <Link href="/productscreen">Products</Link>
           </li>
-          <li onClick={() => setShow(false)}>
-            <Link href="/">Category</Link>
+          <li className="group relative">
+            <h2>Category</h2>
+            <div className="absolute shadow-sm w-full p-2 bg-white hidden group-hover:flex flex-col">
+              <Link onClick={() => setShow(false)} href="/">
+                Deal of Day
+              </Link>
+              <Link onClick={() => setShow(false)} href="/">
+                Best Product
+              </Link>
+              <Link onClick={() => setShow(false)} href="/">
+                New Arrivals
+              </Link>
+            </div>
           </li>
 
           <li onClick={() => setShow(false)}>
@@ -259,14 +270,23 @@ const Navigation = () => {
               </Link>
             </li>
 
-            <li className="group">
-              <Link href="/" className="cursor-pointer">
-                Category
-              </Link>
+            <li className="group relative">
+              <h2>Category</h2>
+              <div className="absolute shadow-md rounded-md z-50 w-[200px] p-2 bg-white hidden group-hover:flex flex-col">
+                <Link onClick={() => setShow(false)} href="/">
+                  Deal of Day
+                </Link>
+                <Link onClick={() => setShow(false)} href="/">
+                  Best Product
+                </Link>
+                <Link onClick={() => setShow(false)} href="/">
+                  New Arrivals
+                </Link>
+              </div>
             </li>
 
             <li>
-              <Link href="/">Contact</Link>
+              <Link href="/contact">Contact</Link>
             </li>
           </ul>
         </div>

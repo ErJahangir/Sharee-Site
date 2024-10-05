@@ -70,8 +70,9 @@ const page = () => {
     slidesToShow: 3,
     speed: 500,
     slidesPerRow: 1,
-    nextArrow: <SampleNextArrow />,
-    prevArrow: <SamplePrevArrow />,
+    arrows: false,
+    // nextArrow: <SampleNextArrow />,
+    // prevArrow: <SamplePrevArrow />,
     responsive: [
       {
         breakpoint: 1024,
@@ -100,51 +101,51 @@ const page = () => {
     ],
   };
 
-  function SampleNextArrow(props) {
-    const { className, style, onClick } = props;
-    return (
-      <div
-        className={className}
-        style={{
-          ...style,
-          color: "black",
-          background: "rgba(0, 0, 0, 0.5)",
-          borderRadius: "50%",
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          width: "40px",
-          height: "40px",
-          zIndex: 1,
-          marginRight: "20px",
-        }}
-        onClick={onClick}
-      />
-    );
-  }
+  // function SampleNextArrow(props) {
+  //   const { className, style, onClick } = props;
+  //   return (
+  //     <div
+  //       className={className}
+  //       style={{
+  //         ...style,
+  //         color: "black",
+  //         background: "rgba(0, 0, 0, 0.5)",
+  //         borderRadius: "50%",
+  //         display: "flex",
+  //         justifyContent: "center",
+  //         alignItems: "center",
+  //         width: "40px",
+  //         height: "40px",
+  //         zIndex: 1,
+  //         marginRight: "20px",
+  //       }}
+  //       onClick={onClick}
+  //     />
+  //   );
+  // }
 
-  function SamplePrevArrow(props) {
-    const { className, style, onClick } = props;
-    return (
-      <div
-        className={className}
-        style={{
-          ...style,
-          color: "black",
-          background: "rgba(0, 0, 0, 0.5)",
-          borderRadius: "50%",
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          width: "40px",
-          height: "40px",
-          zIndex: 1,
-          marginLeft: "20px",
-        }}
-        onClick={onClick}
-      />
-    );
-  }
+  // function SamplePrevArrow(props) {
+  //   const { className, style, onClick } = props;
+  //   return (
+  //     <div
+  //       className={className}
+  //       style={{
+  //         ...style,
+  //         color: "black",
+  //         background: "rgba(0, 0, 0, 0.5)",
+  //         borderRadius: "50%",
+  //         display: "flex",
+  //         justifyContent: "center",
+  //         alignItems: "center",
+  //         width: "40px",
+  //         height: "40px",
+  //         zIndex: 1,
+  //         marginLeft: "20px",
+  //       }}
+  //       onClick={onClick}
+  //     />
+  //   );
+  // }
 
   return (
     <div>
@@ -176,7 +177,7 @@ const page = () => {
           <span className="relative z-10 font-bold">Meet Our Team</span>
           <span className="absolute inset-0 ease-out transform bg-[#fa8f47] transition-all duration-700 -translate-x-full group-hover:translate-x-0"></span>
         </h2>
-        <p className="w-[390px] text-[#868686] mx-auto text-center text-[15px] font-serif">
+        <p className=" w-[350px] md:w-[390px] text-[#868686] mx-auto text-center text-[15px] font-serif">
           A perfect blend of creativity and technical wizardry. The best people
           formula for great websites!
         </p>
@@ -192,7 +193,7 @@ const page = () => {
                 className="w-full p-1 relative"
               />
               {/* social media */}
-              <div className=" flex flex-row  justify-between w-[50%] mx-auto my-5">
+              <div className=" flex flex-row  justify-between text-3xl w-[50%] mx-auto my-5">
                 <Link href={item.facebook}>
                   <FaFacebookF />
                 </Link>

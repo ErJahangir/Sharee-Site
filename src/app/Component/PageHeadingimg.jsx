@@ -11,7 +11,7 @@ const PageHeadingimg = ({ title }) => {
         width={1000}
         height={1000}
         quality={100}
-        className="h-[50vh] object-cover w-full"
+        className="h-[30vh] sm:h-[45vh] md:h-[50vh] object-cover w-full"
       />
 
       {/* <div className=" flex flex-row items-center w-[95%] mx-auto md:w-[85%] mt-6 gap-2 text-[20px]">
