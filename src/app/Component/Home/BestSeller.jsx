@@ -46,7 +46,7 @@ const BestSeller = () => {
       {
         breakpoint: 480,
         settings: {
-          slidesToShow: 1,
+          slidesToShow: 2,
           slidesToScroll: 1,
         },
       },
@@ -65,10 +65,18 @@ const BestSeller = () => {
   };
 
   return (
-    <div className="w-[92%] md:w-[85%] flex mx-auto flex-col my-10 ">
-      <h2 className="uppercase font-extralight my-5 underline underline-offset-4 text-[20px]">
-        Best seller
-      </h2>
+    <div className="w-full md:w-[85%] flex mx-auto flex-col my-10 ">
+      <div className="flex flex-row justify-between w-[90%] md:w-full items-end mx-auto">
+        <h2 className="uppercase font-extralight my-5 underline underline-offset-4 text-[20px] ">
+          Best seller
+        </h2>
+        <Link
+          href="/productscreen"
+          className="uppercase font-extralight my-5 underline underline-offset-4 text-[20px] hover:text-[#fa8f4f] duration-700"
+        >
+          View all
+        </Link>
+      </div>
       <div className="">
         <Slider {...settings}>
           {NewArrivalData.map((item, index) => (
@@ -78,39 +86,41 @@ const BestSeller = () => {
                 width={300}
                 height={270}
                 quality={100}
-                className="w-full  h-[350px]  mx-auto"
+                className="w-full  h-[200px] sm:h-[350px]  mx-auto"
                 alt={item.title}
               />
 
-              <div className="absolute flex flex-row left-[25%] top-[80%] opacity-0 group-hover:opacity-100 group-hover:top-[60%] duration-300 text-[20px] items-center gap-2">
-                <button className="bg-[#fa8f47] w-10 h-10 text-white rounded-full flex items-center justify-center">
+              <div className="md:absolute flex flex-row  md:left-[25%]  md:top-[80%] md:opacity-0 md:group-hover:opacity-100 md:group-hover:top-[60%] duration-300 text-[20px] w-full items-center mt-5 gap-2">
+                <button className="bg-[#fa8f47] w-8 h-8 md:w-10 md:h-10 md:text-[25px] text-white rounded-full flex items-center justify-center">
                   <IoLogoWhatsapp />
                 </button>
 
                 <button
-                  className="bg-[#fa8f47] w-10 h-10 text-white rounded-full flex items-center justify-center"
+                  className="bg-[#fa8f47] w-8 h-8 md:w-10 md:h-10 md:text-[25px] text-white rounded-full flex items-center justify-center"
                   onClick={() => handleQuick(item)}
                 >
                   <MdRemoveRedEye />
                 </button>
 
-                <button className="bg-[#fa8f47] w-10 h-10 text-white text-[25px] rounded-full flex items-center justify-center">
+                <button className="bg-[#fa8f47] w-8 h-8 md:w-10 md:h-10 md:text-[25px] text-white  rounded-full flex items-center justify-center">
                   <MdOutlineShoppingBag />
                 </button>
               </div>
 
-              <div className="p-2 pl-5 flex flex-col gap-1 items-center">
-                <h2 className="hover:text-[#fa8f47]">{item.title}</h2>
-                <p className="text-[15px] text-[#868686]">{item.category}</p>
+              <div className="p-2 md:pl-5 flex flex-col gap-1  md:items-center">
+                <h2 className="hover:text-[#fa8f47] text-[14px] md:text-[18px]">
+                  {item.title}
+                </h2>
+                <p className="text-[15px] hidden md:flex text-[#868686]">
+                  {item.category}
+                </p>
 
-                {item.price && (
-                  <h2 className="font-sans text-[#fa8f47] flex flex-row items-center">
-                    <span>
-                      <FaRupeeSign />
-                    </span>
-                    <span className="text-[22px] font-bold">{item.price}</span>
-                  </h2>
-                )}
+                <h2 className="font-sans text-[#fa8f47] md:text-[22px] flex flex-row items-center">
+                  <span>
+                    <FaRupeeSign />
+                  </span>
+                  <span className=" font-bold">{item.price}</span>
+                </h2>
               </div>
             </div>
           ))}

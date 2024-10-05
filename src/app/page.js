@@ -40,19 +40,18 @@ const page = () => {
               height={1000}
               quality={100}
               loading={"lazy"}
-              className=""
+              className="h-[35vh] sm:h-[40vh] md:h-[50vh]"
             />
-            <div className="absolute top-1/2 md:top-1/3 right-4">
-              <h2 className="text-[20px] tracking-wider font-serif">
+            <div className="absolute top-1/4 right-4">
+              <h2 className=" text-[17px] md:text-[20px] tracking-wider font-serif">
                 {item.title}
               </h2>
-              <h2 className="text-[15px] uppercase text-[#fa8f47] tracking-wider">
+              <h2 className="text-[13px] md:text-[15px] uppercase text-[#fa8f47] tracking-wider">
                 {item.second}
               </h2>
-
               <Link
                 href="/"
-                className="bg-black w-[100px] h-[40px] flex items-center justify-center rounded-full my-2 text-white"
+                className="bg-black w-[100px] h-[40px] font-bold text-[15px] flex items-center justify-center rounded-full my-2 text-white"
               >
                 shop now
               </Link>
@@ -67,7 +66,7 @@ const page = () => {
           src="/images/banner101.jpg"
           width={1000}
           height={1000}
-          className="w-full h-auto object-cover"
+          className="w-full h-[35vh] sm:h-[40vh] md:h-[70vh] object-cover"
           alt="Modern Glasses Banner"
         />
         <div className="absolute top-10 md:top-1/3 left-5 md:left-32 z-10">

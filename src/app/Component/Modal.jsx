@@ -269,15 +269,15 @@ export const QuickView = ({ isOpen, onClose, data }) => {
                   </button>
                 </div>
 
-                <div className="flex flex-row gap-10 items-center">
-                  <div className="flex flex-row items-center gap-3 border-2 w-[200px] justify-center h-[40px] bg-[#fa8f47] text-white rounded-full cursor-pointer">
+                <div className="flex flex-row md:gap-10 items-center">
+                  <div className="flex flex-row items-center gap-1 md:gap-3 border-2 w-[150px] md:w-[200px] justify-center h-[40px] bg-[#fa8f47] text-white rounded-full cursor-pointer">
                     <span>
                       <MdShoppingBag />
                     </span>
                     <span className="uppercase">Add to cart</span>
                   </div>
 
-                  <button className="flex flex-row items-center gap-3 border-2 w-[200px] bg-[#fa8f47] text-white uppercase justify-center h-[40px] rounded-full">
+                  <button className="flex flex-row items-center gap-1 md:gap-3 border-2 w-[150px] md:w-[200px] bg-[#fa8f47] text-white uppercase justify-center h-[40px] rounded-full">
                     <span>
                       <IoLogoWhatsapp className="text-2xl " />
                     </span>

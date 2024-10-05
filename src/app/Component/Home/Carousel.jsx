@@ -98,7 +98,7 @@ const Carousel = () => {
               width={1000}
               height={1000}
               quality={100}
-              className="w-full h-auto  max-h-[80vh] object-cover"
+              className="w-full h-[35vh]  md:h-[80vh] object-cover"
               alt={item.h1}
             />
             <div className="absolute inset-0 flex flex-col justify-center items-center">
