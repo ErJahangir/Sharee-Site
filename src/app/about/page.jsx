@@ -78,7 +78,7 @@ const Page = () => {
           </ul>
 
           <p className="text-[15px] text-gray-500 leading-relaxed mt-8">
-            Thank you for being a part of our journey. Whether you're shopping
+            Thank you for being a part of our journey. Whether you are shopping
             for a special occasion or looking to add a touch of tradition to
             your wardrobe, we are honored to be your go-to saree destination.
           </p>

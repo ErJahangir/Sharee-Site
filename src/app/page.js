@@ -41,6 +41,7 @@ const page = () => {
               height={1000}
               quality={100}
               loading={"lazy"}
+              alt="image"
               className="h-[35vh] sm:h-[40vh] md:h-[50vh]"
             />
             <div className="absolute top-1/4 right-4">

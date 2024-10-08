@@ -14,8 +14,8 @@ const page = () => {
             Get in Touch
           </h2>
           <p className="text-[#868686] text-[15px]">
-            We'd love to hear from you! Whether you're looking for the perfect
-            saree for a special occasion, want to explore our latest
+            We had love to hear from you! Whether you are looking for the
+            perfect saree for a special occasion, want to explore our latest
             collections, or have any questions, our team is here to assist.
             Reach out to us today, and let us help you find the saree that
             brings out your elegance and tradition.
