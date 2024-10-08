@@ -4,6 +4,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Image from "next/image";
+import Link from "next/link";
 
 const Carousel = () => {
   const [isMounted, setIsMounted] = useState(false);
@@ -16,21 +17,21 @@ const Carousel = () => {
 
   const sliderData = [
     {
-      img: "/images/slide2222.jpg",
+      img: "/saree/slider1.png",
       h1: "Limited Collection",
       h2: "40%",
       h3: "& Lovely",
       button: "Shop now",
     },
     {
-      img: "/images/slide11new.jpg",
+      img: "/saree/slider2.png",
       h1: "Best Selling",
       h2: "30%",
       h3: "& Cute",
       button: "Shop now",
     },
     {
-      img: "/images/slide333.jpg",
+      img: "/saree/slider3.png",
       h1: "This Week Only",
       h2: "Big Sale",
       h3: "50% Off",
@@ -98,7 +99,8 @@ const Carousel = () => {
               width={1000}
               height={1000}
               quality={100}
-              className="w-full h-[35vh]  md:h-[80vh] object-cover"
+              loading={"lazy"}
+              className="w-full h-[35vh]  md:h-[90vh] object-cover"
               alt={item.h1}
             />
             <div className="absolute inset-0 flex flex-col justify-center items-center">
@@ -107,7 +109,7 @@ const Carousel = () => {
               </h1>
 
               <h2
-                className={`text-[25px] md:text-[40px] font-bold font-sans text-[#fa8f47] transition-transform duration-[1.2s] ease-out ${
+                className={`text-[25px] md:text-[40px] font-bold font-sans text-white transition-transform duration-[1.2s] ease-out ${
                   animate ? "scale-125 opacity-100" : "scale-0 opacity-0"
                 }`}
               >
@@ -124,13 +126,14 @@ const Carousel = () => {
                 {item.h3}
               </h3>
 
-              <button
+              <Link
+                href="/productscreen"
                 className={`mt-6 hover:bg-[#c36f38] bg-black text-white px-5 py-2 rounded-full transition-all font-bold duration-500 ${
                   animate ? "opacity-100" : "opacity-0"
                 }`}
               >
                 {item.button}
-              </button>
+              </Link>
             </div>
           </div>
         ))}

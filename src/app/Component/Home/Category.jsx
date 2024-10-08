@@ -133,7 +133,7 @@ const Category = () => {
     <div className="w-[90%] mx-auto">
       <h2 className="mx-auto  border w-[100px] border-black px-3 py-2 my-5 uppercase  font-extralight relative overflow-hidden group rounded-md">
         <span className="relative z-10  ">Category</span>
-        <span className="absolute inset-0 ease-out transform bg-[#fa8f47] transition-all duration-700 -translate-x-full group-hover:translate-x-0 "></span>
+        <span className="absolute inset-0 ease-out transform bg-[#117554] transition-all duration-700 -translate-x-full group-hover:translate-x-0 "></span>
       </h2>
 
       <ul className="flex flex-row gap-5 text-center w-full cursor-pointer overflow-hidden border-b-2 border-slate-400">

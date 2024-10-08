@@ -11,7 +11,7 @@ const Pagination = ({ currentPage, totalItems, onPageChange }) => {
         onClick={() => onPageChange(currentPage - 1)}
         disabled={currentPage === 1}
         className={`px-4 py-2 ${
-          currentPage == 1 ? "bg-slate-500 cursor-not-allowed" : "bg-[#fa8f47]"
+          currentPage == 1 ? "bg-slate-500 cursor-not-allowed" : "bg-[#117554]"
         } text-white rounded-md`}
       >
         Previous
@@ -23,7 +23,7 @@ const Pagination = ({ currentPage, totalItems, onPageChange }) => {
           className={`px-4 py-2 ${
             currentPage === index + 1
               ? "bg-black text-white"
-              : "bg-[#fa8f47] text-white"
+              : "bg-[#117554] text-white"
           } rounded-md`}
         >
           {index + 1}
@@ -32,7 +32,7 @@ const Pagination = ({ currentPage, totalItems, onPageChange }) => {
       <button
         onClick={() => onPageChange(currentPage + 1)}
         disabled={currentPage === totalPages}
-        className="px-4 py-2 bg-[#fa8f47] text-white rounded-md"
+        className="px-4 py-2 bg-[#117554] text-white rounded-md"
       >
         Next
       </button>

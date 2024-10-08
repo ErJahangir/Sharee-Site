@@ -8,21 +8,22 @@ import NewArrival from "./Component/Home/NewArrival";
 import Link from "next/link";
 import Footercarousel from "./Component/Home/Footercarousel";
 import BestSeller from "./Component/Home/BestSeller";
+import TopTrend from "./Component/Home/TopTrend";
 
 const page = () => {
   const data = [
     {
-      img: "/images/banner31.jpg",
+      img: "/saree/top1.webp",
       title: "Deal Of Day",
       second: "50% sale off",
     },
     {
-      img: "/images/banner32.jpg",
+      img: "/saree/top2.webp",
       title: "Best Product",
       second: "Hot Dresses",
     },
     {
-      img: "/images/banner33.jpg",
+      img: "/saree/top3.webp",
       title: "New Arrivals",
       second: "SALE CLOTHES",
     },
@@ -40,17 +41,18 @@ const page = () => {
               height={1000}
               quality={100}
               loading={"lazy"}
+              alt="image"
               className="h-[35vh] sm:h-[40vh] md:h-[50vh]"
             />
             <div className="absolute top-1/4 right-4">
-              <h2 className=" text-[17px] md:text-[20px] tracking-wider font-serif">
+              <h2 className=" text-[18px] md:text-[25px] tracking-wider font-serif">
                 {item.title}
               </h2>
-              <h2 className="text-[13px] md:text-[15px] uppercase text-[#fa8f47] tracking-wider">
+              <h2 className="text-[15px] md:text-[18px] uppercase text-[#117554] tracking-wider">
                 {item.second}
               </h2>
               <Link
-                href="/"
+                href="/productscreen"
                 className="bg-black w-[100px] h-[40px] font-bold text-[15px] flex items-center justify-center rounded-full my-2 text-white"
               >
                 shop now
@@ -60,10 +62,10 @@ const page = () => {
         ))}
       </div>
 
-      <NewArrival />
+      <TopTrend />
       <div className="relative">
         <Image
-          src="/images/banner101.jpg"
+          src="/saree/best_sheller.webp"
           width={1000}
           height={1000}
           className="w-full h-[35vh] sm:h-[40vh] md:h-[70vh] object-cover"
@@ -71,24 +73,52 @@ const page = () => {
         />
         <div className="absolute top-10 md:top-1/3 left-5 md:left-32 z-10">
           <div className="flex flex-row gap-4 items-center">
-            <div className="h-16 border-l-2 border-[#fa8f47]"></div>
-            <div className="flex flex-col text-[#fa8f47] gap-2">
+            <div className="h-16 border-l-2 border-[#117554]"></div>
+            <div className="flex flex-col text-[#117554] gap-2">
               <h2 className="uppercase tracking-[5px] font-bold">
                 Modern Glasses
               </h2>
               <p className="text-4xl md:text-5xl font-bold">Best Seller</p>
             </div>
           </div>
-          <p className="mt-2 text-[15px] text-[#868886]">
+          <p className="mt-2 text-[15px] ">
             Lorem ipsum dolor sit amet consectetur adipiscing elit justo
           </p>
-          <button className="mt-4 bg-black text-white py-2 px-4 rounded-full hover:bg-[#e88d4d] transition duration-300">
+          <button className="mt-4 bg-black text-white py-2 px-4 rounded-full hover:bg-[#117554] transition duration-300">
             Shop Now
           </button>
         </div>
       </div>
 
       <BestSeller />
+
+      <div className="relative">
+        <Image
+          src="/saree/bestsheller.jpg"
+          width={1000}
+          height={1000}
+          className="w-full h-[38vh] sm:h-[40vh] md:h-[70vh] object-cover"
+          alt="Modern Glasses Banner"
+        />
+        <div className="absolute top-10 md:top-1/3 left-5 md:left-32 z-10">
+          <div className="flex flex-row gap-4 items-center">
+            <div className="h-16 border-l-2 border-[#117554]"></div>
+            <div className="flex flex-col text-[#117554] gap-2">
+              <h2 className="uppercase tracking-[5px] font-bold">
+                Modern Glasses
+              </h2>
+              <p className="text-4xl md:text-5xl font-bold">New Arrival</p>
+            </div>
+          </div>
+          <p className="mt-2 text-[15px] ">
+            Lorem ipsum dolor sit amet consectetur adipiscing elit justo
+          </p>
+          <button className="mt-4 bg-black text-white py-2 px-4 rounded-full hover:bg-[#117554] transition duration-300">
+            Shop Now
+          </button>
+        </div>
+      </div>
+      <NewArrival />
       <Footercarousel />
     </div>
   );

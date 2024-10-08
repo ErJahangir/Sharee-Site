@@ -3,7 +3,7 @@
 // const Footer = () => {
 //   return (
 //     <div className="bg-[#e8e4e4] flex flex-col mx-auto text-center py-[35px] mt-5">
-//       <h2 className="text-[14px] font-normal text-[#fa8f47] uppercase">
+//       <h2 className="text-[14px] font-normal text-[#117554] uppercase">
 //         Newsletter
 //       </h2>
 //       <h4 className="text-[24px] md:text-[32px] text-black font-extralight font-serif">
@@ -22,7 +22,7 @@
 
 //         <button className="px-3 bg-black  text-white rounded-r-full relative overflow-hidden group">
 //           <span className="relative z-10 pr-8">SUBSCRIBE</span>
-//           <span className="absolute inset-0 bg-[#fa8f47] transition-all duration-500 ease-out transform -translate-x-full group-hover:translate-x-0"></span>
+//           <span className="absolute inset-0 bg-[#117554] transition-all duration-500 ease-out transform -translate-x-full group-hover:translate-x-0"></span>
 //         </button>
 //       </div>
 //     </div>
@@ -34,7 +34,13 @@
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-import { FaFacebookF, FaInstagram, FaLinkedinIn } from "react-icons/fa";
+import {
+  FaFacebookF,
+  FaInstagram,
+  FaLinkedinIn,
+  FaWhatsapp,
+} from "react-icons/fa";
+import { FaPhone } from "react-icons/fa6";
 
 const Footer = () => {
   return (
@@ -44,20 +50,16 @@ const Footer = () => {
           <h2>Customer</h2>
           <ul>
             <li>
-              <Link href="/">Shipping & Returns</Link>
+              <Link href="/productscreen">Shipping</Link>
             </li>
             <li>
-              <Link href="/">Secure Shopping</Link>
+              <Link href="/cart">Cart</Link>
             </li>
-            <li>
-              <Link href="/">Order Status</Link>
-            </li>
+
             <li>
               <Link href="/">Shipping</Link>
             </li>
-            <li>
-              <Link href="/">International Shipping</Link>
-            </li>
+
             <li>
               <Link href="/">Affiliates</Link>
             </li>
@@ -72,54 +74,71 @@ const Footer = () => {
             <li>
               <Link href="/">Customer Service</Link>
             </li>
+
             <li>
-              <Link href="/">Orders and Returns</Link>
-            </li>
-            <li>
-              <Link href="/">Contact</Link>
+              <Link href="/contact">Contact</Link>
             </li>
           </ul>
         </div>
         <div className=" md:w-[30%]">
           <h2 className="text-[25px]">Contact us</h2>
-          <p className="w-[70%] md:w-full text-[#868686] font-serif">
-            45 Grand Central Terminal New York, NY 1017 United State USA
+          <p className="w-[70%] md:w-full text-[#868686] font-sans">
+            124, Normal school road, Ganjipura,Jabalpur
           </p>
           <Link href="/" className="text-[#868686] text-[15px] font-serif">
             contact@yourcompany.com
           </Link>
-          <div className="text-[#868686] text-[15px] font-serif flex flex-row gap-2">
-            <Link href="/">(+123) 456 789</Link>
-            <Link href="/">(+204) 666 888</Link>
+          <div className="text-[#868686] text-[15px] font-serif flex flex-col">
+            <Link
+              href="tel:9584624589"
+              className="flex flex-row items-center gap-2"
+            >
+              <FaPhone />
+              <span>+91 9584624589</span>
+            </Link>
+            <Link
+              href="tel:9039670833"
+              className="flex flex-row items-center gap-2"
+            >
+              <FaPhone />
+              <span>+91 9039670833</span>
+            </Link>
           </div>
           <div className="flex flex-row gap-4 mt-3">
-            <h2 className=" border border-black w-10 h-10 flex items-center justify-center  uppercase font-extralight relative overflow-hidden group rounded-full bg-blue-900">
+            <Link
+              href="https://www.facebook.com/profile.php?id=61564177245622&mibextid=ZbWKwL"
+              className=" border border-black w-10 h-10 flex items-center justify-center  uppercase font-extralight relative overflow-hidden group rounded-full bg-blue-900"
+            >
               <span className="relative z-10 text-2xl">
                 <FaFacebookF />
               </span>
-              <span className="absolute inset-0 ease-out transform bg-[#fa8f47] transition-all duration-700 -translate-y-full group-hover:translate-y-0"></span>
-            </h2>
-            <h2 className="  border border-black w-10 h-10 flex items-center justify-center  uppercase font-extralight relative overflow-hidden group rounded-full bg-pink-900">
+              <span className="absolute inset-0 ease-out transform bg-[#117554] transition-all duration-700 -translate-y-full group-hover:translate-y-0"></span>
+            </Link>
+            <Link
+              href="https://www.instagram.com/archnasaree?utm_source=qr&igsh=MWQ3NnRxN251MWNqOA=="
+              className="  border border-black w-10 h-10 flex items-center justify-center  uppercase font-extralight relative overflow-hidden group rounded-full bg-pink-900"
+            >
               <span className="relative z-10 text-2xl">
                 <FaInstagram />
               </span>
-              <span className="absolute inset-0 ease-out transform bg-[#fa8f47] transition-all duration-700 -translate-x-full group-hover:translate-x-0"></span>
-            </h2>
+              <span className="absolute inset-0 ease-out transform bg-[#117554] transition-all duration-700 -translate-x-full group-hover:translate-x-0"></span>
+            </Link>
             <Link
-              href="/"
-              className=" border border-black w-10 h-10 flex items-center justify-center  uppercase font-extralight relative overflow-hidden group rounded-full bg-blue-600 hover:text-blue-600 transition-all duration-500"
+              href="https://whatsapp.com/channel/0029VakAAeP84OmKWFd2MR1u
+"
+              className=" border border-black w-10 h-10 flex items-center justify-center  uppercase font-extralight relative overflow-hidden group rounded-full bg-green-700 hover:text-white transition-all duration-500"
             >
               <span className="relative z-10 text-2xl">
-                <FaLinkedinIn />
+                <FaWhatsapp />
               </span>
-              <span className="absolute inset-0 ease-out transform bg-[#fa8f47] transition-all duration-700 translate-x-full group-hover:translate-x-0"></span>
+              <span className="absolute inset-0 ease-out transform bg-[#117554] transition-all duration-700 translate-x-full group-hover:translate-x-0"></span>
             </Link>
           </div>
         </div>
       </div>
       <div className="border-b-2 w-[95%] mx-auto my-5 "></div>
       <div className="flex flex-row gap-1 text-[#868686] mx-auto justify-center items-center pb-4">
-        <span>© Copyright 2024</span>
+        <span>© Copyright 2024.</span>
         <span>All Rights Reserved.</span>
       </div>
     </div>

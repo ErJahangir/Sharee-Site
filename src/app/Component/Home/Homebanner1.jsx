@@ -31,13 +31,13 @@ const Homebanner1 = () => {
             {banner1[0].title}
           </h2>
           {/* Italic title */}
-          <h2 className="font-extrabold font-serif text-[30px] text-[#fa8f47]">
+          <h2 className="font-extrabold font-serif text-[30px] text-[#117554]">
             {banner1[0].resion}
           </h2>
           <h2 className="text-[#868686] tracking-[1.5px] text-[15px]">
             {banner1[0].description}
           </h2>
-          <button className="bg-black my-6 text-white font-bold py-2 px-5 rounded-full duration-700 hover:bg-[#fa8f47]">
+          <button className="bg-black my-6 text-white font-bold py-2 px-5 rounded-full duration-700 hover:bg-[#117554]">
             Shop now
           </button>
         </div>
@@ -54,13 +54,13 @@ const Homebanner1 = () => {
           <h2 className="text-[25px] italic tracking-[3px] ">
             {banner1[1].title}
           </h2>
-          <h2 className="font-extrabold font-serif text-[30px] text-[#fa8f47]">
+          <h2 className="font-extrabold font-serif text-[30px] text-[#117554]">
             {banner1[1].resion}
           </h2>
           <h2 className="text-[#868686] tracking-[1.5px] text-[15px]">
             {banner1[1].description}
           </h2>
-          <button className="bg-black my-6 font-bold text-white  py-2 px-5 rounded-full duration-700 hover:bg-[#fa8f47]">
+          <button className="bg-black my-6 font-bold text-white  py-2 px-5 rounded-full duration-700 hover:bg-[#117554]">
             Shop now
           </button>
         </div>
