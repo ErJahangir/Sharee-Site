@@ -52,7 +52,6 @@ const Page = () => {
       <PageHeadingimg title={"Cart"} />
 
       <div className="relative overflow-y-auto w-[95%] md:w-[65%] mx-auto h-[70vh]">
-        {/* Make the cart scrollable */}
         {cartData.length > 0 ? (
           cartData.map((item) => (
             <div
