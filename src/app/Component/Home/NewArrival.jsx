@@ -10,11 +10,13 @@ import Link from "next/link";
 import { NewArrivalData } from "../AllData";
 import { QuickView } from "../Modal";
 import { IoLogoWhatsapp } from "react-icons/io";
+import { addProduct } from "@/app/Redux/Slice";
+import { useDispatch } from "react-redux";
 
 const NewArrival = () => {
   const [show, setShow] = useState(false);
   const [data, setData] = useState(null);
-
+  const dispatch = useDispatch();
   const settings = {
     dots: false,
     infinite: true,
@@ -47,6 +49,10 @@ const NewArrival = () => {
     ],
   };
 
+  const handleAddProduct = (item) => {
+    dispatch(addProduct(item));
+  };
+
   const handleQuick = async (item) => {
     console.log(item);
     try {
@@ -61,11 +67,11 @@ const NewArrival = () => {
     <div className="w-[92%] md:w-[85%] flex mx-auto flex-col my-10">
       <div className="flex flex-row justify-between w-full items-end">
         <h2 className="uppercase font-extralight my-5 underline underline-offset-4 text-[20px]">
-          Top trend
+          New Arrival
         </h2>
         <Link
           href="/productscreen"
-          className="uppercase font-extralight my-5 underline underline-offset-4 text-[20px] hover:text-[#fa8f4f] duration-700"
+          className="uppercase font-extralight my-5 underline underline-offset-4 text-[20px] hover:text-[#117554] duration-700"
         >
           View all
         </Link>
@@ -82,30 +88,38 @@ const NewArrival = () => {
                 alt={item.title}
               />
               <div className="md:absolute flex flex-row  md:left-[25%]  md:top-[80%] md:opacity-0 md:group-hover:opacity-100 md:group-hover:top-[60%] duration-300 text-[20px] w-full items-center mt-5 gap-2">
-                <button className="bg-[#fa8f47] w-8 h-8 md:w-10 md:h-10 md:text-[25px] text-white rounded-full flex items-center justify-center">
+                <a
+                  href={`https://api.whatsapp.com/send?phone=7557708578&text=Hi, I am interested in the following item: %0AName: ${item.title} %0ACategory: ${item.category} %0APrice: ₹${item.price}`}
+                  className="bg-[#117554] w-8 h-8 md:w-10 md:h-10 md:text-[25px] text-white rounded-full flex items-center justify-center"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <IoLogoWhatsapp />
-                </button>
+                </a>
 
                 <button
-                  className="bg-[#fa8f47] w-8 h-8 md:w-10 md:h-10 md:text-[25px] text-white rounded-full flex items-center justify-center"
+                  className="bg-[#117554] w-8 h-8 md:w-10 md:h-10 md:text-[25px] text-white rounded-full flex items-center justify-center"
                   onClick={() => handleQuick(item)}
                 >
                   <MdRemoveRedEye />
                 </button>
 
-                <button className="bg-[#fa8f47] w-8 h-8 md:w-10 md:h-10 md:text-[25px] text-white  rounded-full flex items-center justify-center">
+                <button
+                  onClick={() => handleAddProduct(item)}
+                  className="bg-[#117554] w-8 h-8 md:w-10 md:h-10 md:text-[25px] text-white  rounded-full flex items-center justify-center"
+                >
                   <MdOutlineShoppingBag />
                 </button>
               </div>
               <div className="p-2 md:pl-5 flex flex-col gap-1  md:items-center">
-                <h2 className="hover:text-[#fa8f47] text-[14px] md:text-[18px]">
+                <h2 className="hover:text-[#117554] text-[14px] md:text-[18px]">
                   {item.title}
                 </h2>
                 <p className="text-[15px] hidden md:flex text-[#868686]">
                   {item.category}
                 </p>
 
-                <h2 className="font-sans text-[#fa8f47] md:text-[22px] flex flex-row items-center">
+                <h2 className="font-sans text-[#117554] md:text-[22px] flex flex-row items-center">
                   <span>
                     <FaRupeeSign />
                   </span>

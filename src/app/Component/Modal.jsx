@@ -66,7 +66,7 @@ export const SignUpModal = ({ isOpen, onClose }) => {
             required
           />
         </div>
-        <button type="submit" className="bg-[#fa8f47] text-white p-2 rounded">
+        <button type="submit" className="bg-[#117554] text-white p-2 rounded">
           Submit
         </button>
       </form>
@@ -106,7 +106,7 @@ export const LogInModal = ({ isOpen, onClose }) => {
             required
           />
         </div>
-        <button type="submit" className="bg-[#fa8f47] text-white p-2 rounded">
+        <button type="submit" className="bg-[#117554] text-white p-2 rounded">
           Submit
         </button>
       </form>
@@ -135,12 +135,12 @@ export const LogInModal = ({ isOpen, onClose }) => {
 //               <h2 className="text-[20px] font-bold font-serif">
 //                 {data?.title}
 //               </h2>
-//               <h3 className="flex flex-row gap-2 font-bold text-[15px] text-[#fa8f47]">
+//               <h3 className="flex flex-row gap-2 font-bold text-[15px] text-[#117554]">
 //                 {data?.price && <span>$ {data?.price}</span>}
 //               </h3>
 //               <p>
 //                 <span>Availability:</span>
-//                 <span className="text-[#fa8f47] font-bold"> In stock</span>
+//                 <span className="text-[#117554] font-bold"> In stock</span>
 //               </p>
 //               <p className="text-[15px]">
 //                 <span className="text-[#868686]">Category: </span>
@@ -172,7 +172,7 @@ export const LogInModal = ({ isOpen, onClose }) => {
 //                   <span className="uppercase">Add to cart</span>
 //                 </div>
 
-//                 <button className="flex flex-row items-center gap-3 border-2 w-[130px] hover:text-[#fa8f47] duration-500 justify-center h-[40px] rounded-full">
+//                 <button className="flex flex-row items-center gap-3 border-2 w-[130px] hover:text-[#117554] duration-500 justify-center h-[40px] rounded-full">
 //                   <span>
 //                     <IoLogoWhatsapp className="text-2xl text-green-800" />
 //                   </span>
@@ -229,12 +229,12 @@ export const QuickView = ({ isOpen, onClose, data }) => {
                 <h2 className="text-[20px] font-bold font-serif">
                   {data?.title}
                 </h2>
-                <h3 className="flex flex-row gap-2 font-bold text-[15px] text-[#fa8f47]">
+                <h3 className="flex flex-row gap-2 font-bold text-[15px] text-[#117554]">
                   {data?.price && <span>Rs.{data?.price}</span>}
                 </h3>
                 <p>
                   <span>Availability:</span>
-                  <span className="text-[#fa8f47] font-bold"> In stock</span>
+                  <span className="text-[#117554] font-bold"> In stock</span>
                 </p>
                 <p className="text-[15px]">
                   <span className="text-[#868686]">Category: </span>
@@ -270,14 +270,14 @@ export const QuickView = ({ isOpen, onClose, data }) => {
                 </div>
 
                 <div className="flex flex-row md:gap-10 items-center">
-                  <div className="flex flex-row items-center gap-1 md:gap-3 border-2 w-[150px] md:w-[200px] justify-center h-[40px] bg-[#fa8f47] text-white rounded-full cursor-pointer">
+                  <div className="flex flex-row items-center gap-1 md:gap-3 border-2 w-[150px] md:w-[200px] justify-center h-[40px] bg-[#117554] text-white rounded-full cursor-pointer">
                     <span>
                       <MdShoppingBag />
                     </span>
                     <span className="uppercase">Add to cart</span>
                   </div>
 
-                  <button className="flex flex-row items-center gap-1 md:gap-3 border-2 w-[150px] md:w-[200px] bg-[#fa8f47] text-white uppercase justify-center h-[40px] rounded-full">
+                  <button className="flex flex-row items-center gap-1 md:gap-3 border-2 w-[150px] md:w-[200px] bg-[#117554] text-white uppercase justify-center h-[40px] rounded-full">
                     <span>
                       <IoLogoWhatsapp className="text-2xl " />
                     </span>

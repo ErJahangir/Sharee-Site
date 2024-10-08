@@ -284,7 +284,7 @@ const Header = () => {
         <ul className="flex flex-row  items-center gap-3">
           <li className="relative group">
             <FaUser className="text-2xl cursor-pointer" />
-            <div className="absolute bg-[#fa8f47] capitalize right-0 z-50">
+            <div className="absolute bg-[#117554] capitalize right-0 z-50">
               {login ? (
                 <div className="w-[200px] h-[100px] hidden rounded-lg font-bold group-hover:flex justify-center gap-2 flex-col duration-700">
                   <Link href="/" className="pl-9">
@@ -321,7 +321,7 @@ const Header = () => {
           <li className="relative">
             <Link href="/cart">
               <MdShoppingBag className="text-3xl" />
-              <h2 className="absolute -top-2 -right-1 bg-[#fa8f47] min-w-5 min-h-5 flex text-white items-center justify-center rounded-full">
+              <h2 className="absolute -top-2 -right-1 bg-[#117554] min-w-5 min-h-5 flex text-white items-center justify-center rounded-full">
                 2
               </h2>
             </Link>

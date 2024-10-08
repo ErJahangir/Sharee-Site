@@ -90,13 +90,13 @@ const ProductPage = ({ params }) => {
         <div className="flex flex-col gap-4 mx-auto">
           <div className="flex flex-col gap-3">
             <h2 className="text-[20px] font-bold font-serif">{data.title}</h2>
-            <h2 className="font-sans text-[#fa8f47] md:text-[22px] flex flex-row items-center">
+            <h2 className="font-sans text-[#117554] md:text-[22px] flex flex-row items-center">
               <FaRupeeSign />
               <span className="font-bold">{data.price}</span>
             </h2>
             <p>
               <span>Availability:</span>
-              <span className="text-[#fa8f47] font-bold"> In stock</span>
+              <span className="text-[#117554] font-bold"> In stock</span>
             </p>
             <p className="text-[15px]">
               <span className="text-[#868686]">Category: </span>
@@ -129,13 +129,13 @@ const ProductPage = ({ params }) => {
             <div className="flex flex-row gap-2 md:gap-20 items-center">
               <div
                 onClick={handleAdd}
-                className="flex flex-row items-center gap-3 border-2 w-[160px] md:w-[200px] justify-center h-[40px] bg-[#fa8f47] md:bg-black hover:bg-[#fa8f47] duration-700 text-white rounded-full cursor-pointer"
+                className="flex flex-row items-center gap-3 border-2 w-[160px] md:w-[200px] justify-center h-[40px] bg-[#117554] md:bg-black hover:bg-[#117554] duration-700 text-white rounded-full cursor-pointer"
               >
                 <MdShoppingBag />
                 <span className="uppercase">Add to cart</span>
               </div>
 
-              <button className="flex flex-row items-center gap-3 border-2 w-[160px] md:w-[200px] justify-center h-[40px] bg-[#fa8f47] md:bg-black hover:bg-[#fa8f47] duration-700 text-white rounded-full cursor-pointer">
+              <button className="flex flex-row items-center gap-3 border-2 w-[160px] md:w-[200px] justify-center h-[40px] bg-[#117554] md:bg-black hover:bg-[#117554] duration-700 text-white rounded-full cursor-pointer">
                 <IoLogoWhatsapp className="text-2xl" />
                 <span>Purchase</span>
               </button>

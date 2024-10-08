@@ -81,24 +81,24 @@ const page = () => {
               className="w-full h-auto rounded-md"
             />
             <div className="flex flex-col p-2 py-5 gap-3">
-              <span className="hover:text-[#fa8f47] duration-500 text-[25px]">
+              <span className="hover:text-[#117554] duration-500 text-[25px]">
                 {item.title}
               </span>
               <div className="flex flex-row items-center gap-3 mb-4">
-                <h2 className="hover:text-[#fa8f47] duration-500 text-[#868686]">
+                <h2 className="hover:text-[#117554] duration-500 text-[#868686]">
                   {item.createdDate}
                 </h2>
                 <span className="text-[#868686]">/</span>
                 <h2 className="flex flex-row items-center gap-1">
                   <span className="text-[#868686]">By:</span>
-                  <span className="hover:text-[#fa8f47] duration-500 capitalize">
+                  <span className="hover:text-[#117554] duration-500 capitalize">
                     {item.createBy}
                   </span>
                 </h2>
               </div>
               <p className="text-[#868686] text-[15px] ">{item.description}</p>
               <Link href="/" className="my-4">
-                <span className="bg-black rounded-full hover:bg-[#fa8f47] duration-300 mb-2 text-white p-2 px-5">
+                <span className="bg-black rounded-full hover:bg-[#117554] duration-300 mb-2 text-white p-2 px-5">
                   Read More
                 </span>
               </Link>

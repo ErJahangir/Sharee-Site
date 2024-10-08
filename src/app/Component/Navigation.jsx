@@ -104,7 +104,7 @@
 //         <ul className="flex flex-row  items-center gap-3">
 //           <li className="relative group">
 //             <FaUser className="text-2xl cursor-pointer" />
-//             <div className="absolute bg-[#fa8f47] capitalize right-0 z-50">
+//             <div className="absolute bg-[#117554] capitalize right-0 z-50">
 //               {login ? (
 //                 <div className="w-[200px] h-[100px] hidden rounded-lg font-bold group-hover:flex justify-center gap-2 flex-col duration-700">
 //                   <Link href="/" className="pl-9">
@@ -141,7 +141,7 @@
 //           <li className="relative">
 //             <Link href="/cart">
 //               <MdShoppingBag className="text-3xl" />
-//               <h2 className="absolute -top-2 -right-1 bg-[#fa8f47] min-w-5 min-h-5 flex text-white items-center justify-center rounded-full">
+//               <h2 className="absolute -top-2 -right-1 bg-[#117554] min-w-5 min-h-5 flex text-white items-center justify-center rounded-full">
 //                 2
 //               </h2>
 //             </Link>
@@ -254,9 +254,15 @@ const Navigation = () => {
         </button>
         <div className="relative flex flex-row items-center justify-between gap-11">
           <Link href="/">
-            <Image src="/images/logo.png" width={100} height={100} alt="Logo" />
+            <Image
+              src="/images/archana.png"
+              width={100}
+              height={100}
+              alt="Logo"
+              className="w-14 rounded-full"
+            />
           </Link>
-          <ul className="hidden md:flex flex-row items-center gap-8 text-[18px]">
+          <ul className="hidden md:flex flex-row items-center gap-8 text-[18px] font-bold">
             <li>
               <Link href="/">Home</Link>
             </li>
@@ -294,7 +300,7 @@ const Navigation = () => {
         <ul className="flex flex-row items-center gap-3">
           <li className="relative group">
             <FaUser className="text-2xl cursor-pointer" />
-            <div className="absolute bg-[#fa8f47] capitalize right-0 z-50">
+            <div className="absolute bg-[#117554] capitalize right-0 z-50">
               {login ? (
                 <div className="w-[200px] h-[100px] hidden rounded-lg font-bold group-hover:flex justify-center gap-2 flex-col duration-700">
                   <Link href="/" className="pl-9">
@@ -332,7 +338,7 @@ const Navigation = () => {
             <Link href="/cart">
               <MdShoppingBag className="text-3xl" />
               {count > 0 && (
-                <h2 className="absolute -top-2 -right-1 bg-[#fa8f47] min-w-5 min-h-5 flex text-white items-center justify-center rounded-full">
+                <h2 className="absolute -top-2 -right-1 bg-[#117554] min-w-5 min-h-5 flex text-white items-center justify-center rounded-full">
                   {count}
                 </h2>
               )}
